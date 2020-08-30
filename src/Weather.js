@@ -72,7 +72,6 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "137e68217e6f5991d5d7befae9ff8e52";
-
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&unit=fahrenheit`;
     axios.get(apiUrl).then(handleResponse);
 
