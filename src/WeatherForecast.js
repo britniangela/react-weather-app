@@ -6,6 +6,7 @@ import "./WeatherForecast.css";
 export default function WeatherForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
+
   function handleForecastResponse(response) {
     setForecast(response.data);
     setLoaded(true);
@@ -13,10 +14,32 @@ export default function WeatherForecast(props) {
 
   if (loaded) {
     return (
-      <div className="WeatherForecast">
-        11:15
-        <WeatherIcon code={forecast.list[0].weather[0].icon} />
-        {Math.round(forecast.list[0].main.temp)}°F
+      <div className="WeatherForecast row">
+        <div className="col">
+          {new Date(forecast.list[0].dt * 1000).getHours()}:00
+          <WeatherIcon code={forecast.list[0].weather[0].icon} />
+          {Math.round(forecast.list[0].main.temp)}°F
+        </div>
+        <div className="col">
+          {new Date(forecast.list[1].dt * 1000).getHours()}:00
+          <WeatherIcon code={forecast.list[0].weather[0].icon} />
+          {Math.round(forecast.list[0].main.temp)}°F
+        </div>
+        <div className="col">
+          {new Date(forecast.list[2].dt * 1000).getHours()}:00
+          <WeatherIcon code={forecast.list[0].weather[0].icon} />
+          {Math.round(forecast.list[0].main.temp)}°F
+        </div>
+        <div className="col">
+          {new Date(forecast.list[3].dt * 1000).getHours()}:00
+          <WeatherIcon code={forecast.list[0].weather[0].icon} />
+          {Math.round(forecast.list[0].main.temp)}°F
+        </div>
+        <div className="col">
+          {new Date(forecast.list[4].dt * 1000).getHours()}:00
+          <WeatherIcon code={forecast.list[0].weather[0].icon} />
+          {Math.round(forecast.list[0].main.temp)}°F
+        </div>
       </div>
     );
   } else {
