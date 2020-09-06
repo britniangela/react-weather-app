@@ -34,17 +34,21 @@
 
 .Weather .temperature {
   font-weight: bold;
-  color: rgb(33, 33, 33);
+  color: #52575d;
   font-size: 64px;
   line-height: 64px;
   font-weight: 400;
+  margin-left: 10px;
 }
 
 .Weather .unit {
-  color: rgb(33, 33, 33);
+  color: #52575d;
   font-size: 16px;
   font-weight: 400;
   position: relative;
   line-height: 1;
   top: -34px;
+}
+.Weather .btn-primary {
+  background-color: #07689f;
 }
