@@ -7,24 +7,23 @@ export default function WeatherForecastPreview(props) {
     let hours = date.getHours();
     return `${hours}:00`;
   }
-​
+
   function temperature() {
     if (props.units === "imperial") {
       let temperature = Math.round(props.data.main.temp);
-​
+
       return `${temperature}°F`;
     } else {
       let temperature = Math.round(((props.data.main.temp - 32) * 5) / 9);
-​
+
       return `${temperature}°C`;
     }
   }
-​
+
   return (
     <div className="WeatherForecastPreview col text-center">
       {hours()}
       <WeatherIcon code={props.data.weather[0].icon} />
-      {temperature()}
     </div>
   );
 }
